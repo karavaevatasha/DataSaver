@@ -7,43 +7,26 @@
 //
 
 import UIKit
-import RealmSwift
 
 class InsertToDoItemsVC: UIViewController {
     
-    var incomingToDo: ToDo? = nil
-    let realm = try! Realm()
-    
     @IBOutlet weak var todoTextField: UITextField!
     @IBOutlet weak var todoSwitch: UISwitch!
+    
+    var item: ToDoItems?
+    
     @IBAction func saveButtonAction(_ sender: Any) {
-        
-        if let goodToDo = incomingToDo {
-            try! realm.write {
-                goodToDo.IsDone = todoSwitch.isOn
-                goodToDo.ToDoText = todoTextField.text!
-            }
-        } else {
-            let todo = ToDo()
-            todo.ToDoText = todoTextField.text!
-            todo.IsDone = todoSwitch.isOn
-            try! realm.write {
-                realm.add(todo)
-            }
-        }
+        RealmModel.shared.saveItem(todoItem: todoTextField.text!, isDoneItem: todoSwitch.isOn)
         
         navigationController?.popViewController(animated: true)
-        
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let goodToDo = incomingToDo {
+        if let goodToDo = item {
             todoTextField.text = goodToDo.ToDoText
             todoSwitch.isOn = goodToDo.IsDone
         }
-        
     }
     
     override func didReceiveMemoryWarning() {

@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--UserDefaults-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WorkWithSavingData" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,7 +20,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="272" id="TTt-Rb-De0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zn9-ck-UHZ">
@@ -28,7 +29,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="272" id="M4x-Jh-9N8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qn-cb-j7P">
@@ -38,7 +40,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="133" id="cVr-vl-Rc7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.89757405359999998" green="0.34603005840000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="saveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fK2-do-rOE"/>
                                 </connections>
@@ -55,7 +59,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="i8s-HJ-ULI"/>
+                    <tabBarItem key="tabBarItem" title="UserDefaults" selectedImage="person" catalog="system" id="i8s-HJ-ULI"/>
                     <connections>
                         <outlet property="nameTF" destination="I4P-DA-IyU" id="gBb-rl-f5l"/>
                         <outlet property="surnameTF" destination="Zn9-ck-UHZ" id="pcR-Bf-1Y1"/>
@@ -65,7 +69,7 @@
             </objects>
             <point key="canvasLocation" x="1795.6521739130437" y="-708.48214285714278"/>
         </scene>
-        <!--Realm View Controller-->
+        <!--To-do List-->
         <scene sceneID="y5I-Ik-8p9">
             <objects>
                 <viewController id="kye-PX-1jh" customClass="RealmViewController" customModule="WorkWithSavingData" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,25 +82,25 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCell" id="kwa-EX-eFQ" customClass="ToDoCell" customModule="WorkWithSavingData" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="104"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="109"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kwa-EX-eFQ" id="o9J-a2-Kap">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="109"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" gsjfjnfjsbdjshbdljhbcvjbvnsdmcv,nscmbsmnbcm,nbvsmnd,vbsdjrbf" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfM-YH-dqb">
-                                                    <rect key="frame" x="20" y="11" width="268" height="82"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="20" y="11" width="268" height="87"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adnjksnfklsjbdfljsbfs,nbf," textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5V-MY-wfB">
-                                                    <rect key="frame" x="336" y="11" width="58" height="82"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adnjksnfklsjbdfljsbfs,nbf," textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5V-MY-wfB">
+                                                    <rect key="frame" x="336" y="11" width="58" height="87"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="58" id="uU2-rX-znG"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                    <color key="textColor" red="0.89757405359999998" green="0.34603005840000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -111,9 +115,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="isDoneText" destination="P5V-MY-wfB" id="X6C-Ew-ecF"/>
-                                            <outlet property="todoText" destination="PfM-YH-dqb" id="jT5-8z-BJh"/>
-                                            <segue destination="IZT-uM-Tfo" kind="show" identifier="CellClick" id="Hdf-uv-tOv"/>
+                                            <outlet property="isDoneText" destination="P5V-MY-wfB" id="QNa-Op-Jhk"/>
+                                            <outlet property="todoText" destination="PfM-YH-dqb" id="g3p-Sw-Ed1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -128,15 +131,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hap-Y7-YAP"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KQf-Ph-utc">
+                    <navigationItem key="navigationItem" title="To-do List" id="KQf-Ph-utc">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jcC-Yr-oVK">
+                            <color key="tintColor" red="0.89757405359999998" green="0.34603005840000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="IZT-uM-Tfo" kind="show" id="JIa-Jq-mWg"/>
+                                <action selector="newToDo:" destination="kye-PX-1jh" id="t2p-do-35W"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="todoTableView" destination="fqc-pK-pDc" id="w1q-WO-Xmu"/>
+                        <segue destination="IZT-uM-Tfo" kind="show" identifier="segue" id="xFq-PX-Gfu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNv-eJ-TyV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -156,11 +161,14 @@
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="270" id="PZd-i0-s5H"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gFN-5A-417">
                                 <rect key="frame" x="182.5" y="432.5" width="51" height="31"/>
+                                <color key="tintColor" red="0.89757405359999998" green="0.34603005840000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="onTintColor" red="0.89757405359999998" green="0.34603005840000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have you done it?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfs-kg-KpJ">
                                 <rect key="frame" x="100" y="349" width="214" height="54"/>
@@ -169,7 +177,7 @@
                                     <constraint firstAttribute="height" constant="54" id="eWr-8X-KYG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -186,6 +194,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="MpJ-4R-jZ4">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="AAR-Bw-eTh">
+                            <color key="tintColor" red="0.89757405359999998" green="0.34603005840000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="saveButtonAction:" destination="IZT-uM-Tfo" id="L7o-Fa-N3v"/>
                             </connections>
@@ -200,15 +209,20 @@
             </objects>
             <point key="canvasLocation" x="3655.0724637681164" y="3.3482142857142856"/>
         </scene>
-        <!--Item-->
+        <!--Realm-->
         <scene sceneID="98q-te-Xyj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aDt-vY-aJK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="vHL-Jm-Na3"/>
+                    <tabBarItem key="tabBarItem" title="Realm" selectedImage="pencil.tip.crop.circle" catalog="system" id="vHL-Jm-Na3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bpm-cg-dtk">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.89757405359999998" green="0.34603005840000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.89757405359999998" green="0.34603005840000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -219,26 +233,88 @@
             </objects>
             <point key="canvasLocation" x="1955.072463768116" y="6.6964285714285712"/>
         </scene>
+        <!--To-do List-->
+        <scene sceneID="95a-iu-qzt">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKt-qz-EKh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tableViewController id="dDQ-Sl-Lfi" customClass="CoreDataTableVC" customModule="WorkWithSavingData" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9sU-4P-hmo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="D9h-C4-fTa">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D9h-C4-fTa" id="QYH-bq-agU">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dDQ-Sl-Lfi" id="dSY-DQ-Ymf"/>
+                            <outlet property="delegate" destination="dDQ-Sl-Lfi" id="ySV-Cs-bT8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="To-do List" id="Tlt-sp-Hcg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5vo-Xc-k9e">
+                            <connections>
+                                <action selector="addTask:" destination="dDQ-Sl-Lfi" id="AKv-Fl-auz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2819" y="735"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jxJ-Cm-iMI">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WfB-91-rIh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="KkE-xw-alM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kee-FM-Mt0">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.89757405359999998" green="0.34603005840000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.89757405359999998" green="0.34603005840000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="2uP-P5-jBb"/>
                         <segue destination="aDt-vY-aJK" kind="relationship" relationship="viewControllers" id="3D1-4P-hcX"/>
+                        <segue destination="pta-jn-AFY" kind="relationship" relationship="viewControllers" id="IcI-51-Vp7"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WfB-91-rIh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="7"/>
+            <point key="canvasLocation" x="1059" y="7"/>
+        </scene>
+        <!--CoreData-->
+        <scene sceneID="QOo-Mz-Fji">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pta-jn-AFY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="CoreData" selectedImage="star" catalog="system" id="0Tf-re-q2s"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="7VJ-yj-Acb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tiD-Ph-5Iu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dDQ-Sl-Lfi" kind="relationship" relationship="rootViewController" id="HZP-rC-nfy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YR1-gc-CLc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1955" y="735"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Hdf-uv-tOv"/>
-    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="pencil.tip.crop.circle" catalog="system" width="128" height="121"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+    </resources>
 </document>

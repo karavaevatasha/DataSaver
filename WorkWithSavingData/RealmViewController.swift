@@ -7,18 +7,20 @@
 //
 
 import UIKit
-import RealmSwift
-
-var todos: Results<ToDo>!
-var realm = try! Realm()
 
 class RealmViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var todo = [ToDoItems]()
+    var isEditingMode = false
+    
     @IBOutlet weak var todoTableView: UITableView!
+    @IBAction func newToDo(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "segue", sender: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        todos = realm.objects(ToDo.self)
+        todo = RealmModel.shared.getAllItems()
         todoTableView.dataSource = self
         todoTableView.delegate = self
         reload()
@@ -27,56 +29,57 @@ class RealmViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillAppear(_ animated: Bool) {
         reload()
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "CellClick" {
-            let destination = segue.destination as! InsertToDoItemsVC
-            let todo = todos[todoTableView.indexPathForSelectedRow!.row]
-            destination.incomingToDo = todo
-            
+        if segue.identifier == "segue", let dvc = segue.destination as? InsertToDoItemsVC {
+            if let item = sender as? ToDoItems {
+                dvc.item = item
+            }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+     //  performSegue(withIdentifier: "segue", sender: todo[indexPath.row])
+        RealmModel.shared.updateTask(editItem: todo[indexPath.row], isDone: !todo[indexPath.row].IsDone)
+        reload()
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoCell
-        let todo = todos[indexPath.row]
-        cell.todoText.text = todo.ToDoText
-        cell.isDoneText.text = todo.IsDone ? "It's done" : "Do it"
-        
+        cell.todoText.text = todo[indexPath.row].ToDoText
+        cell.isDoneText.text = todo[indexPath.row].IsDone ? "It's done" : "Do it"
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todos.count
-    }
-
-    func reload() {
-        todoTableView.reloadData()
+        return RealmModel.shared.getAllItems().count
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            try? realm.write {
-                realm.delete(todos[indexPath.row])
-            }
+            RealmModel.shared.deleteItem(name: RealmModel.shared.getAllItems()[indexPath.row])
             reload()
+        } else if editingStyle == .insert {
         }
     }
     
-}
-
-class ToDo: Object {
-   dynamic var ToDoText = ""
-   dynamic var IsDone =  false
-}
-
-class ToDoCell: UITableViewCell {
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if tableView.isEditing {
+            return .none
+        } else {
+            return .delete
+        }
+    }
     
-    @IBOutlet weak var todoText: UILabel!
-    @IBOutlet weak var isDoneText: UILabel!
+    func reload() {
+        todo = RealmModel.shared.getAllItems()
+        self.todoTableView.setEditing(false, animated: true)
+        todoTableView.reloadData()
+    }
 }
 
